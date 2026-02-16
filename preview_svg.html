@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG 矢量图方案预览 (5张)</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            padding: 20px;
+            background: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background: #e0f7fa;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin: 15px 0 5px;
+            color: #006064;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #666;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .btn-area {
+            margin-top: 40px;
+        }
+
+        a {
+            text-decoration: none;
+            background: #006064;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>SVG 方案预览 (最终确认版)</h1>
+    <p>以下 5 张图片由代码实时绘制（SVG矢量图），确保 100% 可显示，流程绝对准确。</p>
+
+    <div class="gallery">
+        <!-- 1 -->
+        <div class="card">
+            <img src="assets/bg_methane.svg" alt="Power to Methane">
+            <h3>1. Power to Methane</h3>
+            <p>风光电 -> 制氢 -> 甲烷化 (余热供暖) -> 气网</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <img src="assets/bg_methanol.svg" alt="Power to Methanol">
+            <h3>2. Power to Methanol</h3>
+            <p>风光电 -> 制氢 + CO2 -> 甲醇 -> MTO -> 烯烃</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <img src="assets/bg_liquid.svg" alt="Power to Liquid">
+            <h3>3. Power to Liquid</h3>
+            <p>风光电 -> 制氢 + CO2 -> 费托合成 -> 绿色航煤</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+            <img src="assets/bg_h2power.svg" alt="Power to H2 to Power">
+            <h3>4. Power to H2 to Power</h3>
+            <p>风光电 -> 制氢 -> 盐穴储氢 -> 燃机发电 -> 电网</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+            <img src="assets/bg_ammonia.svg" alt="Power to Ammonia">
+            <h3>5. Power to Ammonia</h3>
+            <p>风光电 -> 制氢 + 空分N2 -> 合成氨 -> 氨储运</p>
+        </div>
+    </div>
+
+    <div class="btn-area">
+        <p>如果确认无误，请回复“确认发布”。</p>
+    </div>
+
+</body>
+
+</html>

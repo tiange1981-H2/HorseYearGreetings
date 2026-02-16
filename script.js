@@ -11,12 +11,10 @@ const greetings = [
     "马踏祥云，氢启未来！"
 ];
 
-// Assuming backgrounds are named bg_1.jpg, bg_2.jpg, bg_3.jpg in assets folder
-// We need to make sure these exist. For now, referencing them fundamentally.
-const backgrounds = [
-    'assets/bg_wind.svg',
-    'assets/bg_solar.svg',
-    'assets/bg_plant.svg'
+'assets/bg_methane.svg',
+    'assets/bg_methanol.svg',
+    'assets/bg_liquid.svg',
+    'assets/bg_h2power.svg'
 ];
 
 document.getElementById('generateBtn').addEventListener('click', generateGreeting);
@@ -41,6 +39,8 @@ function generateGreeting() {
     const ctx = canvas.getContext('2d');
     const img = new Image();
 
+    // IMPORTANT: Enable CORS to allow reading image data for canvas export
+    img.crossOrigin = "Anonymous";
 
     img.onload = function () {
         try {
@@ -78,20 +78,19 @@ function generateGreeting() {
                 document.getElementById('resultImage').style.display = 'block';
                 document.getElementById('canvas').style.display = 'none'; // Hide canvas if image works
             } catch (e) {
-                console.warn("Canvas export failed (likely due to local file restrictions), showing canvas instead.", e);
-                // Fallback: Show Canvas directly
-                document.getElementById('resultImage').style.display = 'none'; // Hide broken image
+                console.warn("Canvas export failed (likely due to CORS), showing canvas instead.", e);
+                // Fallback: Show Canvas directly if CORS fails specifically at toDataURL step
+                document.getElementById('resultImage').style.display = 'none';
                 const canvasEl = document.getElementById('canvas');
-                canvasEl.style.display = 'block'; // Show canvas
-                canvasEl.style.width = '100%'; // Make it responsive like the image
+                canvasEl.style.display = 'block';
+                canvasEl.style.width = '100%';
                 canvasEl.style.height = 'auto';
 
-                // Move canvas to result area if not already there, or just ensure visibility logic
                 const resultArea = document.getElementById('resultArea');
                 if (!resultArea.contains(canvasEl)) {
                     resultArea.insertBefore(canvasEl, resultArea.firstChild);
                 }
-                alert("提示：由于浏览器安全限制，图片保存功能可能受限。请尝试直接长按/右键点击下方图片区域保存。");
+                alert("提示：由于图片跨域限制，请直接长按图片保存。");
             }
 
             // UI Update
@@ -115,6 +114,15 @@ function generateGreeting() {
 function downloadImage() {
     const link = document.createElement('a');
     link.download = '马年祝福.jpg';
-    link.href = document.getElementById('resultImage').src;
+
+    // Check if showing image or canvas
+    const imgEl = document.getElementById('resultImage');
+    if (imgEl.style.display !== 'none') {
+        link.href = imgEl.src;
+    } else {
+        // Canvas fallback
+        link.href = document.getElementById('canvas').toDataURL('image/jpeg', 0.9);
+    }
+
     link.click();
 }
