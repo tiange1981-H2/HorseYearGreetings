@@ -1,0 +1,23 @@
+<svg width="800" height="1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0F2F1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B2DFDB;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1200" fill="url(#bg)" />
+  
+  <!-- Pipeworks -->
+  <path d="M100,400 L700,400 L700,500 L100,500 Z" fill="#90A4AE" />
+  <circle cx="150" cy="450" r="30" fill="#CFD8DC" />
+  <circle cx="650" cy="450" r="30" fill="#CFD8DC" />
+  
+  <!-- Tank -->
+  <rect x="200" y="600" width="400" height="500" rx="20" fill="#81C784" />
+  <rect x="220" y="620" width="360" height="460" rx="10" fill="#A5D6A7" />
+  
+  <text x="50%" y="700" font-family="sans-serif" font-size="40" fill="#1B5E20" text-anchor="middle" font-weight="bold">H2</text>
+  <text x="50%" y="750" font-family="sans-serif" font-size="20" fill="#1B5E20" text-anchor="middle">Green Hydrogen</text>
+  
+  <text x="50%" y="20%" font-family="sans-serif" font-size="40" fill="#00695C" text-anchor="middle" font-weight="bold" opacity="0.3">Chemical Plant</text>
+</svg>
